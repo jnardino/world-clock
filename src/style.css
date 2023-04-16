@@ -1,0 +1,69 @@
+body {
+    background-color: bisque;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    background-color: aqua;
+    border-radius: 20px;
+    margin: 0px auto;
+    max-width: 600px;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.current-display {
+    font-size: 18px;
+}
+
+.current-time {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 14px;
+}
+
+.current-date {
+    font-size: 18px;
+    margin-top: 14px;
+}
+
+select {
+    border-radius: 4px;
+    display: block;
+    padding: 8px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.city-card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.city-name {
+    font-size: 28px;
+    text-align: start;
+}
+
+.city-date {
+    font-size: 18px;
+    text-align: start;
+}
+
+.city-time {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.am-pm {
+    font-size: 18px;
+    vertical-align:middle;
+}
+
+footer {
+    text-align: center;
+}
