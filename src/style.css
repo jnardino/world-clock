@@ -1,9 +1,13 @@
 body {
-    background-color: azure;
+    background-color: #f0fffa;
     font-family: 'Silkscreen', cursive;
 }
 
 h1 {
+    line-height: 72px;
+    font-size: 72px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -13,14 +17,14 @@ h1 {
     margin: 0px auto;
     max-width: 600px;
     outline: none;
-    padding: 40px 30px;
+    padding: 40px 40px;
     position: relative;
     text-align: center;
     z-index: 0;
 }
 
 .container:before {
-    animation: glowing-container 30s linear infinite;
+    animation: glowing-container 3s linear infinite;
     background: linear-gradient(
         45deg,
         #ff0000,
@@ -31,18 +35,23 @@ h1 {
         #002bff,
         #7a00ff,
         #ff00c8,
-        #ff0000
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff
         );
     background-size: 400%;
     border-radius: 20px;
     content: "";
-    filter: blur(10px);
-    height: calc(100% + 4px);
+    filter: blur(18px);
+    height: calc(100% + 10px);
     left: -2px;
     position: absolute;
     top: -2px;
     transition: opacity 0.3s ease-in-out;
-    width: calc(100% + 4px);
+    width: calc(100% + 10px);
     z-index: -1;
 }
 
@@ -50,11 +59,8 @@ h1 {
     0% {
         background-position: 0 0;
     }
-    50% {
-        background-position: 400% 0;
-    }
     100% {
-        background-position: 0 0;
+        background-position: 100% 0;
     }
 }
 
@@ -75,7 +81,7 @@ h1 {
 }
 
 .current-time {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     margin-top: 14px;
 }
@@ -92,33 +98,34 @@ h1 {
 
 select {
     background-color: #111;
-    color: #ffffff;
-    font-family: 'Silkscreen', cursive;
+    border-color: #7a00ff;
     border-radius: 4px;
+    color: #ffffff;
     display: block;
+    font-family: 'Silkscreen', cursive;
     padding: 8px;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%;
 }
 
 .city-card {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .city-name {
-    font-size: 28px;
+    font-size: 30px;
     text-align: start;
 }
 
 .city-date {
-    font-size: 18px;
+    font-size: 16px;
     text-align: start;
 }
 
 .city-time {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -127,7 +134,11 @@ select {
     vertical-align:middle;
 }
 
+a {
+    color: #ff00c8;
+}
+
 footer {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
 }
