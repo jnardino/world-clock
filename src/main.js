@@ -1,3 +1,11 @@
+function updateLocation() {
+    let currentTimeElement = document.querySelector(".current-time");
+    let currentDateElement = document.querySelector(".current-date");
+    let currentTime = moment().tz(moment.tz.guess());
+
+    currentTimeElement.innerHTML = `${currentTime.format("h:mm:ss")} <span class="am-pm">${currentTime.format("A")}</span>`;
+    currentDateElement.innerHTML = `${currentTime.format("MMMM Do YYYY")}`;
+}
 
 function setTimeDate(location, timezone) {
     let cityElement = document.querySelector(`${location} .city-date`);
@@ -32,12 +40,14 @@ function updateCityList(event) {
 function main() {
     let citySelectElement = document.querySelector("#city-select");
     citySelectElement.addEventListener("change", updateCityList);
-    
+
+    updateLocation();
     setTimeDate("#new-york", "America/New_York");
     setTimeDate("#london", "Europe/London");
     setTimeDate("#hong-kong", "Asia/Hong_Kong");
     setTimeDate("#tokyo", "Asia/Tokyo");
 
+    setInterval(updateLocation);
     setInterval(setTimeDate, 1000, "#new-york", "America/New_York");
     setInterval(setTimeDate, 1000, "#london", "Europe/London");
     setInterval(setTimeDate, 1000, "#hong-kong", "Asia/Hong_Kong");
