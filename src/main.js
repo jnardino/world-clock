@@ -20,21 +20,23 @@ function setTimeDate(location, timezone) {
 
 function updateCityList(event) {
     let cityTimeZone = event.target.value;
-    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-    let cityTimeUpdate = moment().tz(cityTimeZone);
-    let citiesElement = document.querySelector(".city-main");
-    citiesElement.innerHTML = `
-    <div class="city-card">
-        <div>
-            <div class="city-name">${cityName}</div>
-            <div class="city-date">${cityTimeUpdate.format("MMMM Do YYYY")}</div>
+    if (cityTimeZone !== "") {
+        let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+        let cityTimeUpdate = moment().tz(cityTimeZone);
+        let citiesElement = document.querySelector(".city-main");
+        citiesElement.innerHTML = `
+        <div class="city-card">
+            <div>
+                <div class="city-name">${cityName}</div>
+                <div class="city-date">${cityTimeUpdate.format("MMMM Do YYYY")}</div>
+            </div>
+            <div class="city-time">${cityTimeUpdate.format("h:mm:ss")} 
+                <span class="am-pm">${cityTimeUpdate.format("A")}</span>
+            </div>
         </div>
-        <div class="city-time">${cityTimeUpdate.format("h:mm:ss")} 
-            <span class="am-pm">${cityTimeUpdate.format("A")}</span>
-        </div>
-    </div>
-    <p>💾 <a href="/">Back to save</a></p>
-    `;
+        <p>💾 <a href="/">Back to save</a></p>
+        `;
+    }
 }
 
 

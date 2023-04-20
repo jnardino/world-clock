@@ -108,6 +108,14 @@ select {
     width: 100%;
 }
 
+select:focus-visible {
+    outline: 0px;
+}
+
+option:checked { 
+    color: #7a00ff; 
+}
+
 .city-card {
     display: flex;
     justify-content: space-between;
