@@ -1,11 +1,11 @@
 
 function setTimeDate(location, timezone) {
-    let cityElement = document.querySelector(`${location} .city-date`);
-    cityElement.innerHTML = moment().format("MMMM Do YYYY");
-
     let cityTimeElement = document.querySelector(`${location} .city-time`);
     let cityTime = moment().tz(timezone);
     cityTimeElement.innerHTML = `${cityTime.format("h:mm:ss")} <span class="am-pm">${cityTime.format("A")}</span>`;
+    
+    let cityElement = document.querySelector(`${location} .city-date`);
+    cityElement.innerHTML = `${cityTime.format("MMMM Do YYYY")}`;
 }
 
 setTimeDate("#new-york", "America/New_York");
