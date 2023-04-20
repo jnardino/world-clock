@@ -19,6 +19,7 @@ function setTimeDate(location, timezone) {
 }
 
 function updateCityList(event) {
+    clearInterval(focusInterval);
     let cityTimeZone = event.target.value;
     if (cityTimeZone !== "") {
         let cityName = cityTimeZone.replace("_", " ").split("/")[1];
@@ -30,15 +31,26 @@ function updateCityList(event) {
                 <div class="city-name">${cityName}</div>
                 <div class="city-date">${cityTimeUpdate.format("MMMM Do YYYY")}</div>
             </div>
-            <div class="city-time">${cityTimeUpdate.format("h:mm:ss")} 
+            <div class="city-time">
+                <span class="hour">${cityTimeUpdate.format("h:mm:ss")}</span> 
                 <span class="am-pm">${cityTimeUpdate.format("A")}</span>
             </div>
         </div>
         <p>💾 <a href="/">Back to save</a></p>
         `;
+        focusInterval = setInterval(function(cityTimeZone) {
+            let day = citiesElement.querySelector(".city-card .city-date");
+            let time = citiesElement.querySelector(".city-card .city-time .hour");
+            let amPm = citiesElement.querySelector(".city-card .city-time .am-pm");
+            let cityTimeUpdate = moment().tz(cityTimeZone);
+
+            day.innerHTML = cityTimeUpdate.format("MMMM Do YYYY");
+            time.innerHTML = cityTimeUpdate.format("h:mm:ss");
+            amPm.innerHTML = cityTimeUpdate.format("A");
+            
+        }, 1000, cityTimeZone);
     }
 }
-
 
 function main() {
     let citySelectElement = document.querySelector("#city-select");
@@ -57,4 +69,5 @@ function main() {
     setInterval(setTimeDate, 1000, "#tokyo", "Asia/Tokyo");
 }
 
+let focusInterval;
 main();
