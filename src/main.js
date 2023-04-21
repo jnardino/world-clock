@@ -56,13 +56,12 @@ function main() {
     let citySelectElement = document.querySelector("#city-select");
     citySelectElement.addEventListener("change", updateCityList);
 
-    updateLocation();
     setTimeDate("#new-york", "America/New_York");
     setTimeDate("#london", "Europe/London");
     setTimeDate("#hong-kong", "Asia/Hong_Kong");
     setTimeDate("#tokyo", "Asia/Tokyo");
 
-    setInterval(updateLocation);
+    setInterval(updateLocation, 1000);
     setInterval(setTimeDate, 1000, "#new-york", "America/New_York");
     setInterval(setTimeDate, 1000, "#london", "Europe/London");
     setInterval(setTimeDate, 1000, "#hong-kong", "Asia/Hong_Kong");
