@@ -5,9 +5,9 @@ body {
 
 h1 {
     line-height: 72px;
-    font-size: 72px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    font-size: 86px;
+    margin-top: 30px;
+    margin-bottom: 60px;
     text-align: center;
 }
 
@@ -159,4 +159,52 @@ p {
 p a {
     text-decoration: none;
     color: #ffffff;
+}
+
+
+
+/* ------Media Query------ */
+
+
+@media (max-width: 576px){
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .current-display {
+        font-size: 14px;
+    }
+
+    .current-time {
+        font-size: 28px;
+    }
+
+    .current-date {
+        font-size: 16px;
+    }
+
+    .select {
+        font-size: 12px;
+    }
+
+    .city-name {
+        font-size: 22px;
+    }
+
+    .city-time {
+        font-size: 22px;
+    }
+
+    .city-date {
+        font-size: 12px;
+    }
+
+    .am-pm {
+        font-size: 12px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
 }
